@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+    background-color: antiquewhite;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styles */
+header {
+    background: #0088cc;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    font-size: 36px;
+}
+
+/* Section styles */
+section {
+    padding: 40px 0;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 28px;
+    color: #333;
+}
+
+section p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #666;
+}
+
+/* Team member styles */
+#team-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#team-members div {
+    width: 300px;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#team-members h3 {
+    font-size: 24px;
+    margin: 10px 0;
+    color: #333;
+}
+
+#team-members p {
+    font-size: 16px;
+    color: #777;
+}
+
+/* Testimonial styles */
+#testimonial-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#testimonial-list div {
+    width: 400px;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background: #f5f5f5;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#testimonial-list p {
+    font-size: 18px;
+    color: #333;
+}
+
+/* Footer styles */
+footer {
+    background: #0088cc;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Contact section styles (customize as needed) */
+#contact {
+    background: #f5f5f5;
+}
+
+/* Button style (customize as needed) */
+.button {
+    background: #0088cc;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.button:hover {
+    background: #005b8c;
+}
+
+/* Responsive design for mobile devices */
+@media (max-width: 768px) {
+    section h2 {
+        font-size: 24px;
+    }
+
+    section p {
+        font-size: 16px;
+    }
+
+    #team-members div {
+        width: 100%;
+    }
+
+    #testimonial-list div {
+        width: 100%;
+    }
+
+    footer {
+        padding: 10px 0;
+    }
+}
+
+
+
+
+
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>About Us - Your Travel Company</title>
+</head>
+<body>
+    <header>
+        <h1>About Us</h1>
+    </header>
+    <section id="mission">
+        <h2>Our Mission</h2>
+        <p>our mission is to inspire and empower travelers to explore the world responsibly, creating unforgettable experiences and lifelong memories while promoting sustainable and responsible tourism. </p>
+    </section>
+    <section id="story">
+        <h2>Our Story</h2>
+        <p>Founded in 2005 by passionate explorers Jane and John, Adventure Wanderlust was born out of a shared love for discovering the world's hidden gems. What started as a small venture offering adventure tours to a few intrepid travelers has blossomed into a globally recognized travel company. Over the years, we've cultivated unforgettable journeys to every corner of the globe, guided by a commitment to sustainable and responsible tourism. With a team of dedicated experts, we curate unique and immersive experiences that go beyond the ordinary. Our story is one of transformation, adventure, and a relentless desire to create moments that last a lifetime, making Adventure Wanderlust your trusted companion in exploring the world's wonders.</p>
+    </section>
+    <section id="team">
+        <h2>Meet the Team</h2>
+        <div id="team-members">
+           
+        </div>
+    </section>
+    <section id="advantages">
+        <h2>Why Choose Us</h2>
+        <p>We offer personalized, responsible, and locally immersive experiences, backed by 24/7 support. Our competitive pricing, trusted reputation, and commitment to unforgettable memories make us your ideal travel partner. With us, you'll have peace of mind and embark on extraordinary journeys tailored just for you."</p>
+    </section>
+    <section id="testimonials">
+        <h2>Client Testimonials</h2>
+        <div id="testimonial-list">
+            
+        </div>
+    </section>
+    <section id="contact">
+        <h2>Get in Touch</h2>
+        <p><a href="contact.html">Message us</a></p>
+    </section>
+    <footer>
+        <p>Thank you for exploring the world with us.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+<script>
+const teamMembers = [
+    {
+        name: "X",
+        role: "CEO",
+        bio: "A travel enthusiast with over 15 years of experience,  is the driving force behind . Their vision and dedication have shaped our journey."
+    },
+    // Add more team members here
+];
+
+
+const testimonials = [
+    {
+        name: "John Doe",
+        comment: "I had an amazing experience with . They helped me plan a dream vacation, and I can't wait to travel with them again."
+    },
+    // Add more testimonials here
+];
+
+
+function populateTeamMembers() {
+    const teamMembersDiv = document.getElementById('team-members');
+
+    teamMembers.forEach(member => {
+        const memberDiv = document.createElement('div');
+        memberDiv.innerHTML = `
+            <h3>${member.name}</h3>
+            <p><strong>${member.role}</strong></p>
+            <p>${member.bio}</p>
+        `;
+        teamMembersDiv.appendChild(memberDiv);
+    });
+}
+
+
+function populateTestimonials() {
+    const testimonialList = document.getElementById('testimonial-list');
+
+    testimonials.forEach(testimonial => {
+        const testimonialDiv = document.createElement('div');
+        testimonialDiv.innerHTML = `
+            <p>"${testimonial.comment}"</p>
+            <p>- ${testimonial.name}</p>
+        `;
+        testimonialList.appendChild(testimonialDiv);
+    });
+}
+
+
+populateTeamMembers();
+populateTestimonials();
+</script>
